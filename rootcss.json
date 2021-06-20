@@ -1,0 +1,13 @@
+{
+  "primary": "primary",
+  "secondary": "secondary",
+  "tertiary": "tertiary",
+  "good": "good",
+  "caution": "caution",
+  "alarm": "alarm",
+  "rgbgood": [0, 255, 0],
+  "rgbcaution": [255, 255, 0],
+  "rgbalarm": [255, 0, 0],
+  "lucent": "lucentof",
+  "shades": "shadesof"
+}
