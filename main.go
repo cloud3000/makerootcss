@@ -34,6 +34,9 @@ type config struct {
 
 	// Shades are shades of gray.
 	Shades string `json:"shades"`
+
+	// The "Y" spread operator
+	Yspread int `json:"yspread"`
 }
 
 type rgb struct {
@@ -316,13 +319,13 @@ func main() {
 	outputShades(primary1, cfg.Primary, cfg.Primary[0:3], cfg.Lucent)
 
 	// Create a secondary color by altering the primary hue 30 degrees.
-	secondary := newHsl(primary1, 30)
+	secondary := newHsl(primary1, cfg.Yspread)
 	outputShades(secondary, cfg.Secondary, cfg.Secondary[0:3], cfg.Lucent)
 
-	// Create a tertiary color by altering the primary hue 195 degrees.
-	// Why 195? Halfway between primary & secondary is +15 from primary.
-	// 180 degrees from there is 195 from primary.
-	tertiary := newHsl(primary1, 195)
+	// Create a tertiary color by altering the primary hue.
+	// Alter the hue by a number of degrees, base on the "Y" spread operator.
+	degrees := (cfg.Yspread / 2) + 180
+	tertiary := newHsl(primary1, degrees)
 	outputShades(tertiary, cfg.Tertiary, cfg.Tertiary[0:3], cfg.Lucent)
 
 	// The following colors are for messaging:

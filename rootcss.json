@@ -9,5 +9,6 @@
   "rgbcaution": [255, 255, 0],
   "rgbalarm": [255, 0, 0],
   "lucent": "lucentof",
-  "shades": "shadesof"
+  "shades": "shadesof",
+  "yspread": 180
 }
